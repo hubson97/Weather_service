@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WeatherService.Data;
+using WeatherService.Hubs;
 
 namespace WeatherService
 {
@@ -37,17 +38,24 @@ namespace WeatherService
 
             services.AddRazorPages();
 
-            services.AddAuthentication()
-                .AddGoogle(opt =>
-                {
-                    opt.ClientId = "";
-                    opt.ClientSecret = "";
-                })
-                .AddMicrosoftAccount(opt=> 
-                {
-                    opt.ClientId = "";
-                    opt.ClientSecret = "";
-                });
+            //services.AddAuthentication()
+            //    .AddGoogle(opt =>
+            //    {
+            //        opt.ClientId = "";
+            //        opt.ClientSecret = "";
+            //    })
+            //    .AddMicrosoftAccount(opt=> 
+            //    {
+            //        opt.ClientId = "";
+            //        opt.ClientSecret = "";
+            //    });
+
+            services.AddSignalR()
+                    .AddJsonProtocol(opt=>
+                    {
+                        //opt.PayloadSerializerOptions.PropertyNamingPolicy = null;
+                    });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,6 +84,7 @@ namespace WeatherService
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapHub<WeatherHub>("/weatherHub");
             });
         }
     }

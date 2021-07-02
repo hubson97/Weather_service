@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace WeatherService.Pages
 {
     public class IndexModel : PageModel
@@ -19,7 +20,6 @@ namespace WeatherService.Pages
 
         public void OnGet()
         {
-
         }
     }
 }

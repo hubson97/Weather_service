@@ -1,0 +1,378 @@
+{
+  "lat": 53,
+  "lon": 21,
+  "timezone": "Europe/Warsaw",
+  "timezone_offset": 7200,
+  "current": {
+    "dt": 1624451568,
+    "sunrise": 1624414220,
+    "sunset": 1624475160,
+    "temp": 301.25,
+    "feels_like": 303.87,
+    "pressure": 1016,
+    "humidity": 69,
+    "dew_point": 295.03,
+    "uvi": 4.57,
+    "clouds": 100,
+    "visibility": 10000,
+    "wind_speed": 1.78,
+    "wind_deg": 302,
+    "wind_gust": 1.12,
+    "weather": [
+      {
+        "id": 804,
+        "main": "Clouds",
+        "description": "ca³kowite zachmurzenie",
+        "icon": "04d"
+      }
+    ]
+  },
+  "daily": [
+    {
+      "dt": 1624442400,
+      "sunrise": 1624414220,
+      "sunset": 1624475160,
+      "moonrise": 1624471080,
+      "moonset": 1624409220,
+      "moon_phase": 0.45,
+      "temp": {
+        "day": 300.42,
+        "min": 290.91,
+        "max": 301.25,
+        "night": 292.39,
+        "eve": 299.85,
+        "morn": 292.1
+      },
+      "feels_like": {
+        "day": 302.1,
+        "night": 292.85,
+        "eve": 301.65,
+        "morn": 292.48
+      },
+      "pressure": 1016,
+      "humidity": 66,
+      "dew_point": 293.51,
+      "wind_speed": 4.63,
+      "wind_deg": 34,
+      "wind_gust": 10.8,
+      "weather": [
+        {
+          "id": 501,
+          "main": "Rain",
+          "description": "umiarkowane opady deszczu",
+          "icon": "10d"
+        }
+      ],
+      "clouds": 77,
+      "pop": 0.96,
+      "rain": 4.08,
+      "uvi": 6.06
+    },
+    {
+      "dt": 1624528800,
+      "sunrise": 1624500640,
+      "sunset": 1624561564,
+      "moonrise": 1624562340,
+      "moonset": 1624497960,
+      "moon_phase": 0.5,
+      "temp": {
+        "day": 299.74,
+        "min": 289.26,
+        "max": 302.23,
+        "night": 293.09,
+        "eve": 300.07,
+        "morn": 289.89
+      },
+      "feels_like": {
+        "day": 299.74,
+        "night": 293.59,
+        "eve": 302.03,
+        "morn": 290.05
+      },
+      "pressure": 1016,
+      "humidity": 66,
+      "dew_point": 292.94,
+      "wind_speed": 4.46,
+      "wind_deg": 26,
+      "wind_gust": 9,
+      "weather": [
+        {
+          "id": 501,
+          "main": "Rain",
+          "description": "umiarkowane opady deszczu",
+          "icon": "10d"
+        }
+      ],
+      "clouds": 30,
+      "pop": 1,
+      "rain": 8.69,
+      "uvi": 6.62
+    },
+    {
+      "dt": 1624615200,
+      "sunrise": 1624587064,
+      "sunset": 1624647964,
+      "moonrise": 1624652460,
+      "moonset": 1624587540,
+      "moon_phase": 0.52,
+      "temp": {
+        "day": 295.09,
+        "min": 288.98,
+        "max": 295.69,
+        "night": 290.9,
+        "eve": 293.9,
+        "morn": 289.63
+      },
+      "feels_like": {
+        "day": 295.25,
+        "night": 291.05,
+        "eve": 294.07,
+        "morn": 289.81
+      },
+      "pressure": 1013,
+      "humidity": 73,
+      "dew_point": 290.04,
+      "wind_speed": 4.66,
+      "wind_deg": 246,
+      "wind_gust": 7.91,
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "s³abe opady deszczu",
+          "icon": "10d"
+        }
+      ],
+      "clouds": 81,
+      "pop": 0.88,
+      "rain": 1.7,
+      "uvi": 6.87
+    },
+    {
+      "dt": 1624701600,
+      "sunrise": 1624673490,
+      "sunset": 1624734362,
+      "moonrise": 1624741560,
+      "moonset": 1624678140,
+      "moon_phase": 0.56,
+      "temp": {
+        "day": 294.18,
+        "min": 288.14,
+        "max": 296.08,
+        "night": 288.96,
+        "eve": 296.08,
+        "morn": 288.14
+      },
+      "feels_like": {
+        "day": 293.91,
+        "night": 288.61,
+        "eve": 295.81,
+        "morn": 288.15
+      },
+      "pressure": 1018,
+      "humidity": 60,
+      "dew_point": 286.01,
+      "wind_speed": 5.11,
+      "wind_deg": 286,
+      "wind_gust": 7.41,
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "s³abe opady deszczu",
+          "icon": "10d"
+        }
+      ],
+      "clouds": 1,
+      "pop": 0.2,
+      "rain": 0.26,
+      "uvi": 3.29
+    },
+    {
+      "dt": 1624788000,
+      "sunrise": 1624759920,
+      "sunset": 1624820755,
+      "moonrise": 1624829820,
+      "moonset": 1624769400,
+      "moon_phase": 0.6,
+      "temp": {
+        "day": 295.83,
+        "min": 286.99,
+        "max": 297.59,
+        "night": 290.2,
+        "eve": 295.69,
+        "morn": 286.99
+      },
+      "feels_like": {
+        "day": 295.56,
+        "night": 289.81,
+        "eve": 295.59,
+        "morn": 286.88
+      },
+      "pressure": 1020,
+      "humidity": 54,
+      "dew_point": 286.01,
+      "wind_speed": 2.86,
+      "wind_deg": 291,
+      "wind_gust": 4.53,
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "bezchmurnie",
+          "icon": "01d"
+        }
+      ],
+      "clouds": 2,
+      "pop": 0,
+      "uvi": 5.79
+    },
+    {
+      "dt": 1624874400,
+      "sunrise": 1624846352,
+      "sunset": 1624907146,
+      "moonrise": 1624917540,
+      "moonset": 1624860780,
+      "moon_phase": 0.64,
+      "temp": {
+        "day": 297.65,
+        "min": 288.57,
+        "max": 299.71,
+        "night": 292.48,
+        "eve": 299.38,
+        "morn": 288.57
+      },
+      "feels_like": {
+        "day": 297.51,
+        "night": 292.19,
+        "eve": 299.38,
+        "morn": 288.26
+      },
+      "pressure": 1020,
+      "humidity": 52,
+      "dew_point": 287.08,
+      "wind_speed": 2.22,
+      "wind_deg": 224,
+      "wind_gust": 2.3,
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "pochmurno z przejaœnieniami",
+          "icon": "04d"
+        }
+      ],
+      "clouds": 61,
+      "pop": 0,
+      "uvi": 6
+    },
+    {
+      "dt": 1624960800,
+      "sunrise": 1624932788,
+      "sunset": 1624993533,
+      "moonrise": 0,
+      "moonset": 1624952100,
+      "moon_phase": 0.67,
+      "temp": {
+        "day": 299.75,
+        "min": 290.55,
+        "max": 302.15,
+        "night": 294.86,
+        "eve": 302.15,
+        "morn": 290.55
+      },
+      "feels_like": {
+        "day": 299.75,
+        "night": 294.94,
+        "eve": 302.24,
+        "morn": 290.38
+      },
+      "pressure": 1017,
+      "humidity": 54,
+      "dew_point": 289.61,
+      "wind_speed": 3.48,
+      "wind_deg": 140,
+      "wind_gust": 5.52,
+      "weather": [
+        {
+          "id": 802,
+          "main": "Clouds",
+          "description": "rozproszone chmury",
+          "icon": "03d"
+        }
+      ],
+      "clouds": 41,
+      "pop": 0,
+      "uvi": 6
+    },
+    {
+      "dt": 1625047200,
+      "sunrise": 1625019227,
+      "sunset": 1625079917,
+      "moonrise": 1625004960,
+      "moonset": 1625043180,
+      "moon_phase": 0.7,
+      "temp": {
+        "day": 301.84,
+        "min": 292.46,
+        "max": 304.38,
+        "night": 295.32,
+        "eve": 304.38,
+        "morn": 292.46
+      },
+      "feels_like": {
+        "day": 302.76,
+        "night": 295.76,
+        "eve": 305.19,
+        "morn": 292.56
+      },
+      "pressure": 1014,
+      "humidity": 53,
+      "dew_point": 291.41,
+      "wind_speed": 3.72,
+      "wind_deg": 163,
+      "wind_gust": 5.21,
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "bezchmurnie",
+          "icon": "01d"
+        }
+      ],
+      "clouds": 7,
+      "pop": 0.12,
+      "uvi": 6
+    }
+  ],
+  "alerts": [
+    {
+      "sender_name": "IMGW-PIB Centralne Biuro Prognoz Meteorologicznych - Wydzia³ w Warszawie",
+      "event": "Orange high-temperature warning",
+      "start": 1624273277,
+      "end": 1624557600,
+      "description": "Heat wave is expected with maximum temperature from 28°C to 32°C and minimum temperature from 17°C to 21°C, locally 15°C.",
+      "tags": []
+    },
+    {
+      "sender_name": "IMGW-PIB Centralne Biuro Prognoz Meteorologicznych - Wydzia³ w Warszawie",
+      "event": "Yellow Thunderstorm warning",
+      "start": 1624442400,
+      "end": 1624485600,
+      "description": "Thunderstorms are forecasted acompanied by the precipitation amount up to 30 mm, locally up to 40 mm and wind gusts up to 90 km/h. Hail in places.",
+      "tags": [
+        "Thunderstorm"
+      ]
+    },
+    {
+      "sender_name": "IMGW-PIB Centralne Biuro Prognoz Meteorologicznych - Wydzia³ w Warszawie",
+      "event": "Orange Thunderstorm warning",
+      "start": 1624442760,
+      "end": 1624492800,
+      "description": "Thunderstorms are forecasted acompanied by the precipitation amount from 40 mm to 50 mm, locally in case of cumulation up to 60 mm and wind gusts up to 100 km/h. Hail in places.",
+      "tags": [
+        "Thunderstorm"
+      ]
+    }
+  ]
+}

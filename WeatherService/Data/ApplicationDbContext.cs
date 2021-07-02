@@ -8,7 +8,7 @@ namespace WeatherService.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        DbSet<WeatherInfo> WeatherInfos { get; set; }
+        public DbSet<WeatherInfo> WeatherInfos { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -31,7 +31,7 @@ namespace WeatherService.Data
         public double Pressure { get; set; }
         public double Humidity { get; set; }
         public double Rain { get; set; }
-        public int WindSpeed { get; set; }
-        public int WindDirection { get; set; }
+        public double WindSpeed { get; set; }
+        public double WindDirection { get; set; }
     }
 }

@@ -4,7 +4,25 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="text-center">
+        <h4 class="display-4">Welcome on the weather service @User.Identity.Name !</h4>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h4 class="display-4">Welcome on the weather service!</h4>
+        <br />
+        <h5>To use it,  <a asp-area="Identity" asp-page="/Account/Login">please log in</a>!</h5>
+    </div>
+}
+
+
+
+
