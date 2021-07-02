@@ -30,7 +30,7 @@ namespace WeatherService
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("LocalSqlServerConnection")));
+                    Configuration.GetConnectionString("AzureDbConnection"))); //AzureDbConnection    LocalSqlServerConnection
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)

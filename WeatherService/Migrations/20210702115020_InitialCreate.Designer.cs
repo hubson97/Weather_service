@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WeatherService.Data;
 
-namespace WeatherService.Data.Migrations
+namespace WeatherService.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210623112807_AddWeatherInfoTable")]
-    partial class AddWeatherInfoTable
+    [Migration("20210702115020_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -249,11 +249,11 @@ namespace WeatherService.Data.Migrations
                     b.Property<string>("WeatherServiceName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("WindDirection")
-                        .HasColumnType("int");
+                    b.Property<double>("WindDirection")
+                        .HasColumnType("float");
 
-                    b.Property<int>("WindSpeed")
-                        .HasColumnType("int");
+                    b.Property<double>("WindSpeed")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
