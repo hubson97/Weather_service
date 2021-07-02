@@ -38,17 +38,17 @@ namespace WeatherService
 
             services.AddRazorPages();
 
-            //services.AddAuthentication()
-            //    .AddGoogle(opt =>
-            //    {
-            //        opt.ClientId = "";
-            //        opt.ClientSecret = "";
-            //    })
-            //    .AddMicrosoftAccount(opt=> 
-            //    {
-            //        opt.ClientId = "";
-            //        opt.ClientSecret = "";
-            //    });
+            services.AddAuthentication()
+                .AddGoogle(opt =>
+                {
+                    opt.ClientId = "827170507763-8b7lcal3h8ak2s7a5lf3m9a46s4hgoe4.apps.googleusercontent.com";
+                    opt.ClientSecret = "p2ZKEux0MZBheOaDETYW20RS";
+                });
+                //.AddMicrosoftAccount(opt =>
+                //{
+                //    opt.ClientId = "";
+                //    opt.ClientSecret = "";
+                //});
 
             services.AddSignalR()
                     .AddJsonProtocol(opt=>
