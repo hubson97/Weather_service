@@ -44,7 +44,7 @@ namespace WeatherService.Pages
         public IList<SelectListItem> WthSrvList { get; set; } = new List<SelectListItem>()
         {
             new SelectListItem(){ Text="OpenWeather", Value = "openweather" },
-            new SelectListItem(){ Text="Meteomatics", Value = "meteomatics" },
+            new SelectListItem(){ Text="Weatherbit", Value = "weatherbit" },
             new SelectListItem(){ Text="AccuWeather", Value = "accuweather" }
         };
 

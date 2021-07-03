@@ -11,13 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Quartz;
+using Quartz.Impl;
 using WeatherService.Data;
 using WeatherService.Hubs;
+using WeatherService.Quartz;
+using Quartz.Spi;
 
 namespace WeatherService
 {
     public class Startup
-    {
+    { 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,6 +32,9 @@ namespace WeatherService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddHostedService<QuartzHostedService>();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("AzureDbConnection"))); //AzureDbConnection    LocalSqlServerConnection
@@ -38,6 +45,12 @@ namespace WeatherService
 
             services.AddRazorPages();
 
+            services.AddSingleton<IJobFactory, QuartzJobFactory>();
+            services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
+            services.AddSingleton<DownloadWeatherInfoJob>();
+            services.AddSingleton(new JobMetadata(Guid.NewGuid(), typeof(DownloadWeatherInfoJob), "DownloadWeatherInfoJob", "* 0/7 * * * ?")); //* 0/7 * * * ? - co 7 minut; //* * 12/6 * * ? - co 6 godzin sstartuj¹c o 12 w poludnie
+
+
             services.AddAuthentication()
                 .AddGoogle(opt =>
                 {
@@ -47,7 +60,7 @@ namespace WeatherService
                 //.AddMicrosoftAccount(opt =>
                 //{
                 //    opt.ClientId = "";
-                //    opt.ClientSecret = "";
+                //    opt.ClientSecret = ""; 
                 //});
 
             services.AddSignalR()
@@ -55,6 +68,9 @@ namespace WeatherService
                     {
                         //opt.PayloadSerializerOptions.PropertyNamingPolicy = null;
                     });
+
+
+
 
         }
 
