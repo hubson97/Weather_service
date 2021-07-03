@@ -118,7 +118,7 @@ namespace WeatherService.Quartz
                 }
             }
 
-            if (dataList != null && dataList.Count > 5 )//== CityCoords.Count)
+            if (dataList != null && dataList.Count == CityCoords.Count)
             {
                 var wthPol = new WeatherInfo()
                 {
@@ -191,7 +191,7 @@ namespace WeatherService.Quartz
                 }
             }
 
-            if (dataList != null && dataList.Count > 5)//== CityCoords.Count)
+            if (dataList != null && dataList.Count == CityCoords.Count)//== CityCoords.Count)
             {
                 var wthPol = new WeatherInfo()
                 {
@@ -254,7 +254,7 @@ namespace WeatherService.Quartz
                 }
             }
 
-            if(dataList != null && dataList.Count > 5)//== CityCoords.Count)
+            if(dataList != null && dataList.Count == CityCoords.Count)//== CityCoords.Count)
             {
                 var wthPol = new WeatherInfo()
                 {
