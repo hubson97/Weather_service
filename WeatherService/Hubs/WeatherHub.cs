@@ -68,7 +68,6 @@ namespace WeatherService.Hubs
             DbDaysNumber = WthOptions.DaysNumber > DbDaysNumber ? DbDaysNumber : WthOptions.DaysNumber;
 
             var wthDataList = new List<WeatherInfoModel>();
-            //int totalDbDays = getDaysNumberFromDb();
 
             if (WthOptions.DataType.Equals("currentData"))
             {
@@ -80,6 +79,10 @@ namespace WeatherService.Hubs
                 }
                 else
                     wthDataList = filteredDataList;
+
+                var poland = wthDataList.Where(x => x.City.Equals("poland")).Select(x => x).FirstOrDefault();
+                wthDataList.Remove(poland);
+                wthDataList.Add(poland);
 
                 //var polandData = extractPolandCurrentWeatherInfo(dbDataList);
                 //if (polandData != null && wthDataList != null)
@@ -100,6 +103,10 @@ namespace WeatherService.Hubs
                 }
                 else
                     wthDataList = filteredDataList;
+
+                var poland = wthDataList.Where(x => x.City.Equals("poland")).Select(x => x).FirstOrDefault();
+                wthDataList.Remove(poland);
+                wthDataList.Add(poland);
 
                 //var polandData = extractPolandAverageWeatherInfo(dbDataList);
                 //if (polandData != null && wthDataList != null)

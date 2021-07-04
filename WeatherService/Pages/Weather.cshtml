@@ -7,65 +7,47 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
-<p>Pojemność bazy ( w dniach ): @Model.DbDaysNumber</p>
+<p>Database capacity ( in days ): @Model.DbDaysNumber</p>
 
 
 
 <div>
     @*<input type="hidden" name="handler" value="weatherOptions"/>*@
-    <label>Rodzaj danych: </label>
+    <label>Data type: </label>
     <br />
     <select asp-for="Options.DataType" id="dataTypes" asp-items="@Model.DataTypeList" onchange="checkSelectedDataType(this)">
-        <option>Wybierz rodzaj danych</option>
+        <option>Choose data type</option>
     </select>
 
     <br>
     <br>
 
-    <label for="dataSrc" id="dataSrcLabel">Źródło danych: </label>
+    <label for="dataSrc" id="dataSrcLabel">Data source: </label>
     <select asp-for="Options.DataSrc" id="dataSrcSelect" asp-items="@Model.WthSrvList">
-        <option value=@null>Wybierz źródło</option>
+        <option value=@null>Choose data source</option>
     </select>
 
 
-    <label for="citySelect" id="citySelectLabel">Miasto: </label>
+    <label for="citySelect" id="citySelectLabel">City: </label>
     <select asp-for="Options.City" id="citySelect" asp-items="@Model.CityList">
-        <option value=@null>Wybierz miasto</option>
+        <option value=@null>Choose city</option>
     </select>
 
     <br />
 
-    <label for="daysNumberInput">Liczba dni: </label><a id="dayNumberText"> 1</a>
+    <label for="daysNumberInput">Number of days: </label><a id="dayNumberText"> 1</a>
     <br />
     <input class="custom-range" id="daysNumberInput" asp-for="Options.DaysNumber" type="range" min="1" max="30" step="1" value="1" onchange="updateDayNumberText(this.value);" />
-    @*    <span>Max</span>*@
 
     <br />
     <br />
 
-    <button id="submitBtn" asp-page-handler="WeatherOptions">Zatwierdź</button>
+    <button id="submitBtn" asp-page-handler="WeatherOptions">Submit</button>
 </div>
 
 <hr />
 
 <table id="weatherCurrAvgTable" class="table">
-    @*<thead>
-        <tr><td>Weather Service</td></tr>
-             <tr>
-                 <td></td>
-                 <td>Warszawa</td>
-                 <td>Łódź</td>
-                 <td>Szczecin</td>
-                 <td>Wrocław</td>
-                 <td>Gdańsk</td>
-                 <td>Kraków</td>
-                 <td>Suwałki</td>
-                 <td>Rzeszów</td>
-             </tr>
-         </thead>
-         <tbody>
-
-        </tbody>*@
 </table>
 
 <table id="weatherCityTable">

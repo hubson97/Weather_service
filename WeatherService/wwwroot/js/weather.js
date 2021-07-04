@@ -69,7 +69,7 @@ document.getElementById("submitBtn").addEventListener("click", function (event)
 connection.on("newCurrDataWeather", function (resultData, daysNumber) 
 {
     var str = JSON.stringify(resultData);
-    alert("Curr - otrzymalem dane z serwera:" + str);
+    //alert("Curr - otrzymalem dane z serwera:" + str);
 
     createCurrAvgWeatherTable(resultData, "currentData", daysNumber);
 
@@ -78,7 +78,7 @@ connection.on("newCurrDataWeather", function (resultData, daysNumber)
 connection.on("newAvgDataWeather", function (resultData, daysNumber) 
 {
     var str = JSON.stringify(resultData);
-    alert("AVG - otrzymalem dane z serwera:" + str);
+    //alert("AVG - otrzymalem dane z serwera:" + str);
 
     createCurrAvgWeatherTable(resultData, "avgData", daysNumber);
 });
@@ -90,7 +90,7 @@ function createCurrAvgWeatherTable(resultData, dataType, daysNumber)
 
     if (resultData == null)
     {
-        alert("no data for this option!");
+        alert("No data for this option!");
         table.innerHTML = "No data for this option!";
         return;
     }
@@ -206,7 +206,7 @@ function createCurrAvgWeatherTable(resultData, dataType, daysNumber)
 connection.on("newStdDeviationDataWeather", function (resultData, daysNumber) 
 {
     var str = JSON.stringify(resultData);
-    alert("StdDeviat - otrzymalem dane z serwera:" + str);
+    //alert("StdDeviat - otrzymalem dane z serwera:" + str);
 
     createStdDeviationWeatherTable(resultData,daysNumber);
 
@@ -219,7 +219,7 @@ function createStdDeviationWeatherTable(resultData, daysNumber)
 
     if (resultData == null)
     {
-        alert("no data for this option!");
+        alert("No data for this option!");
         return;
     }
 

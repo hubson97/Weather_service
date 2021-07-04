@@ -48,7 +48,7 @@ namespace WeatherService
             services.AddSingleton<IJobFactory, QuartzJobFactory>();
             services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
             services.AddSingleton<DownloadWeatherInfoJob>();
-            services.AddSingleton(new JobMetadata(Guid.NewGuid(), typeof(DownloadWeatherInfoJob), "DownloadWeatherInfoJob", "* * 14/6 * * ?")); //* 0/7 * * * ? - co 7 minut; //* * 12/6 * * ? - co 6 godzin sstartuj¹c o 12 w poludnie
+            services.AddSingleton(new JobMetadata(Guid.NewGuid(), typeof(DownloadWeatherInfoJob), "DownloadWeatherInfoJob", "* 0/20 * * * ?")); //* 0/7 * * * ? - co 7 minut; //* * 12/6 * * ? - co 6 godzin sstartuj¹c o 12 w poludnie; // * 0/30 * * * ?-- co 30 minut
 
 
             services.AddAuthentication()

@@ -125,12 +125,12 @@ namespace WeatherService.Quartz
                     WeatherServiceName = "weatherbit",
                     City = "poland",
                     DateTime = DateTime.Now,
-                    Temperature = dataList.Average(p => p.Temperature),
-                    Pressure = dataList.Average(p => p.Pressure),
-                    Humidity = dataList.Average(p => p.Humidity),
-                    Rain = dataList.Average(p => p.Rain),
-                    WindSpeed = dataList.Average(p => p.WindSpeed),
-                    WindDirection = dataList.Average(p => p.WindDirection),
+                    Temperature = Math.Round(dataList.Average(p => p.Temperature), 2),
+                    Pressure    = Math.Round(dataList.Average(p => p.Pressure), 2),
+                    Humidity    = Math.Round(dataList.Average(p => p.Humidity), 2),
+                    Rain        = Math.Round(dataList.Average(p => p.Rain), 2),
+                    WindSpeed   = Math.Round(dataList.Average(p => p.WindSpeed), 2),
+                    WindDirection = Math.Round(dataList.Average(p => p.WindDirection), 2)
                 };
                 dataList.Add(wthPol);
             }
@@ -170,12 +170,12 @@ namespace WeatherService.Quartz
                         WeatherServiceName = "accuweather",
                         City = city.Key,
                         DateTime = DateTime.Now,
-                        Temperature = Convert.ToDouble(jsonObj["Temperature"]["Metric"]["Value"]),
-                        Pressure = Convert.ToDouble(jsonObj["Pressure"]["Metric"]["Value"]),
-                        Humidity = Convert.ToDouble(jsonObj["RelativeHumidity"]),
-                        WindSpeed = Convert.ToDouble(jsonObj["Wind"]["Speed"]["Metric"]["Value"]),
-                        WindDirection = Convert.ToDouble(jsonObj["Wind"]["Direction"]["Degrees"]),
-                        Rain = Convert.ToDouble(jsonObj["PrecipitationSummary"]["PastHour"]["Metric"]["Value"])
+                        Temperature = Math.Round(Convert.ToDouble(jsonObj["Temperature"]["Metric"]["Value"]), 2),
+                        Pressure = Math.Round(Convert.ToDouble(jsonObj["Pressure"]["Metric"]["Value"]), 2),
+                        Humidity = Math.Round(Convert.ToDouble(jsonObj["RelativeHumidity"]), 2),
+                        WindSpeed = Math.Round(Convert.ToDouble(jsonObj["Wind"]["Speed"]["Metric"]["Value"]), 2),
+                        WindDirection = Math.Round(Convert.ToDouble(jsonObj["Wind"]["Direction"]["Degrees"]), 2),
+                        Rain = Math.Round(Convert.ToDouble(jsonObj["PrecipitationSummary"]["PastHour"]["Metric"]["Value"]) ,2)
                     };
 
                     dataList.Add(wth);
@@ -198,12 +198,12 @@ namespace WeatherService.Quartz
                     WeatherServiceName = "accuweather",
                     City = "poland",
                     DateTime = DateTime.Now,
-                    Temperature = dataList.Average(p => p.Temperature),
-                    Pressure = dataList.Average(p => p.Pressure),
-                    Humidity = dataList.Average(p => p.Humidity),
-                    Rain = dataList.Average(p => p.Rain),
-                    WindSpeed = dataList.Average(p => p.WindSpeed),
-                    WindDirection = dataList.Average(p => p.WindDirection),
+                    Temperature = Math.Round(dataList.Average(p => p.Temperature), 2),
+                    Pressure    = Math.Round(dataList.Average(p => p.Pressure),2),
+                    Humidity    = Math.Round(dataList.Average(p => p.Humidity),2),
+                    Rain        = Math.Round(dataList.Average(p => p.Rain),2),
+                    WindSpeed   = Math.Round(dataList.Average(p => p.WindSpeed),2),
+                    WindDirection = Math.Round(dataList.Average(p => p.WindDirection),2)
                 };
                 dataList.Add(wthPol);
             }
@@ -233,12 +233,12 @@ namespace WeatherService.Quartz
                         WeatherServiceName = "openweather",
                         City = city.Key,
                         DateTime = DateTime.Now,
-                        Temperature = Convert.ToDouble(jsonObj["current"]["temp"]),
-                        Pressure = Convert.ToDouble(jsonObj["current"]["pressure"]),
-                        Humidity = Convert.ToDouble(jsonObj["current"]["humidity"]),
-                        WindSpeed = Convert.ToDouble(jsonObj["current"]["wind_speed"]),
-                        WindDirection = Convert.ToDouble(jsonObj["current"]["wind_deg"]),
-                        Rain = Convert.ToDouble(jsonObj["daily"][0]["rain"])
+                        Temperature = Math.Round(getCelsiusFromKelvin(Convert.ToDouble(jsonObj["current"]["temp"])), 2),
+                        Pressure = Math.Round(Convert.ToDouble(jsonObj["current"]["pressure"]), 2),
+                        Humidity = Math.Round(Convert.ToDouble(jsonObj["current"]["humidity"]), 2),
+                        WindSpeed = Math.Round(Convert.ToDouble(jsonObj["current"]["wind_speed"]), 2),
+                        WindDirection = Math.Round(Convert.ToDouble(jsonObj["current"]["wind_deg"]), 2),
+                        Rain = Math.Round(Convert.ToDouble(jsonObj["daily"][0]["rain"]), 2)
                     };
 
                     dataList.Add(wth);
@@ -261,12 +261,12 @@ namespace WeatherService.Quartz
                     WeatherServiceName = "openweather",
                     City = "poland",
                     DateTime = DateTime.Now,
-                    Temperature = dataList.Average(p => p.Temperature),
-                    Pressure = dataList.Average(p => p.Pressure),
-                    Humidity = dataList.Average(p => p.Humidity),
-                    Rain = dataList.Average(p => p.Rain),
-                    WindSpeed = dataList.Average(p => p.WindSpeed),
-                    WindDirection = dataList.Average(p => p.WindDirection),
+                    Temperature = Math.Round(dataList.Average(p => p.Temperature), 2),
+                    Pressure = Math.Round(dataList.Average(p => p.Pressure), 2),
+                    Humidity = Math.Round(dataList.Average(p => p.Humidity), 2),
+                    Rain = Math.Round(dataList.Average(p => p.Rain), 2),
+                    WindSpeed = Math.Round(dataList.Average(p => p.WindSpeed), 2),
+                    WindDirection = Math.Round(dataList.Average(p => p.WindDirection), 2)
                 };
                 dataList.Add(wthPol);
             }
