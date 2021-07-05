@@ -35,11 +35,9 @@ namespace WeatherService.Hubs
 
 
             //3. Server pobiera odpowienie dane z bazy danych w zaleznosci od oczekiwan
-            //getInfoFromDatabase(); // lista weatherInfoModel
             var wthDataList = getWeatherInfoFromDb();
 
-
-            //5. Serwer wysyła odpowiednie dane do clienta w zależności od oczekiwań
+            //4. Serwer wysyła odpowiednie dane do clienta w zależności od oczekiwań
 
             if (options.DataType.Equals("currentData")) 
             { 
@@ -58,8 +56,16 @@ namespace WeatherService.Hubs
 
         private int getDaysNumberFromDb()
         {
-            var date = _dbContext.WeatherInfos.Select(x => x.DateTime).OrderBy(x=>x).First();
-            return ( DateTime.Now - date).Days;
+            var date = _dbContext.WeatherInfos.Select(x => x.DateTime).OrderBy(x => x).First();
+            var diff = (DateTime.Now - date).TotalDays;
+
+            int left = (int)diff;
+
+            var diff2 = diff - left;
+            if (diff2 > 0)
+                return left + 1;
+            else
+                return left;
         }
 
         public List<WeatherInfoModel> getWeatherInfoFromDb()
@@ -137,10 +143,8 @@ namespace WeatherService.Hubs
             return wthDataList;
         }
 
-
         private List<WeatherInfoModel> extractCitiesCurrentWeatherInfo(List<WeatherInfo> dbDataList)
         {
-
             var filteredDataList = dbDataList.Where(x => x.WeatherServiceName.Equals(WthOptions.DataSrc))
                                     .GroupBy(x => x.City, (key, g) => g.OrderByDescending(e => e.DateTime)
                                       .Select(x => new WeatherInfoModel()
@@ -180,7 +184,6 @@ namespace WeatherService.Hubs
         }
 
 
-
         private List<WeatherInfoModel>  extractCitiesAverageWeatherInfo(List<WeatherInfo> dbDataList)
         {
             var filteredDataList = dbDataList
@@ -192,12 +195,12 @@ namespace WeatherService.Hubs
                     WeatherServiceName = x.WeatherServiceName,
                     City = x.City,
                     DateTime = x.DateTime,
-                    Temperature = Math.Round(g.Average(p => p.Temperature), 2),//x.Temperature,
-                    Pressure = Math.Round(g.Average(p => p.Pressure), 2),//x.Pressure,
-                    Humidity = Math.Round(g.Average(p => p.Humidity), 2),//x.Humidity,
-                    Rain = Math.Round(g.Average(p => p.Rain), 2), //x.Rain,
-                    WindSpeed = Math.Round(g.Average(p => p.WindSpeed), 2),//x.WindSpeed,
-                    WindDirection = Math.Round(g.Average(p => p.WindDirection), 2) //x.WindDirection
+                    Temperature = Math.Round(g.Average(p => p.Temperature), 2),
+                    Pressure = Math.Round(g.Average(p => p.Pressure), 2),
+                    Humidity = Math.Round(g.Average(p => p.Humidity), 2),
+                    Rain = Math.Round(g.Average(p => p.Rain), 2), 
+                    WindSpeed = Math.Round(g.Average(p => p.WindSpeed), 2),
+                    WindDirection = Math.Round(g.Average(p => p.WindDirection), 2) 
                 })
                 .FirstOrDefault()).ToList();
 
@@ -234,13 +237,13 @@ namespace WeatherService.Hubs
                       {
                           WeatherServiceName = x.WeatherServiceName,
                           City = x.City,
-                          DateTime = DateTime.Now,//x.DateTime,
-                              Temperature = StdDev(g.Select(p => p.Temperature)),//x.Temperature,
-                              Pressure = StdDev(g.Select(p => p.Pressure)),//x.Pressure,
-                              Humidity = StdDev(g.Select(p => p.Humidity)),//x.Humidity,
-                              Rain = StdDev(g.Select(p => p.Rain)), //x.Rain,
-                              WindSpeed = StdDev(g.Select(p => p.WindSpeed)),//x.WindSpeed,
-                              WindDirection = StdDev(g.Select(p => p.WindDirection)) //x.WindDirection
+                          DateTime = DateTime.Now,
+                              Temperature = StdDev(g.Select(p => p.Temperature)),
+                              Pressure = StdDev(g.Select(p => p.Pressure)),
+                              Humidity = StdDev(g.Select(p => p.Humidity)),
+                              Rain = StdDev(g.Select(p => p.Rain)), 
+                              WindSpeed = StdDev(g.Select(p => p.WindSpeed)),
+                              WindDirection = StdDev(g.Select(p => p.WindDirection)) 
                           })
                       .FirstOrDefault()).ToList();
 
@@ -258,20 +261,18 @@ namespace WeatherService.Hubs
                 WeatherServiceName = data[0].WeatherServiceName,
                 City = data[0].City,
                 DateTime = data[0].DateTime,
-                Temperature = StdDev(data.Select(p => p.Temperature)),//x.Temperature,
-                Pressure = StdDev(data.Select(p => p.Pressure)),//x.Pressure,
-                Humidity = StdDev(data.Select(p => p.Humidity)),//x.Humidity,
-                Rain = StdDev(data.Select(p => p.Rain)), //x.Rain,
-                WindSpeed = StdDev(data.Select(p => p.WindSpeed)),//x.WindSpeed,
-                WindDirection = StdDev(data.Select(p => p.WindDirection)) //x.WindDirection
+                Temperature = StdDev(data.Select(p => p.Temperature)),
+                Pressure = StdDev(data.Select(p => p.Pressure)),
+                Humidity = StdDev(data.Select(p => p.Humidity)),
+                Rain = StdDev(data.Select(p => p.Rain)),
+                WindSpeed = StdDev(data.Select(p => p.WindSpeed)),
+                WindDirection = StdDev(data.Select(p => p.WindDirection)) 
             };
 
 
 
             return polandWthModel;
         }
-
-
 
         private double StdDev(IEnumerable<double> values)
         {
