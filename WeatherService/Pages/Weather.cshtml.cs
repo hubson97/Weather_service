@@ -73,7 +73,15 @@ namespace WeatherService.Pages
         private int getDaysNumberFromDb()
         {
             var date = _dbContext.WeatherInfos.Select(x => x.DateTime).OrderBy(x => x).First();
-            return (DateTime.Now - date).Days;
+            var diff = (DateTime.Now - date).TotalDays;
+
+            int left = (int)diff;
+
+            var diff2 = diff - left;
+            if (diff2 > 0)
+                return left + 1;
+            else
+                return left;
         }
 
     }

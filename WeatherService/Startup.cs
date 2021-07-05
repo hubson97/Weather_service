@@ -48,7 +48,7 @@ namespace WeatherService
             services.AddSingleton<IJobFactory, QuartzJobFactory>();
             services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
             services.AddSingleton<DownloadWeatherInfoJob>();
-            services.AddSingleton(new JobMetadata(Guid.NewGuid(), typeof(DownloadWeatherInfoJob), "DownloadWeatherInfoJob", "0 0 0/3 1/1 * ? *")); //0 0 0/3 1/1 * ? * - co 3 godziny; 
+            services.AddSingleton(new JobMetadata(Guid.NewGuid(), typeof(DownloadWeatherInfoJob), "DownloadWeatherInfoJob", "0 0 0/12 1/1 * ? *")); //0 0 0/3 1/1 * ? * - co 3 godziny; 
 
 
             services.AddAuthentication()
@@ -57,20 +57,12 @@ namespace WeatherService
                     opt.ClientId = "827170507763-8b7lcal3h8ak2s7a5lf3m9a46s4hgoe4.apps.googleusercontent.com";
                     opt.ClientSecret = "p2ZKEux0MZBheOaDETYW20RS";
                 });
-                //.AddMicrosoftAccount(opt =>
-                //{
-                //    opt.ClientId = "";
-                //    opt.ClientSecret = ""; 
-                //});
 
             services.AddSignalR()
                     .AddJsonProtocol(opt=>
                     {
                         //opt.PayloadSerializerOptions.PropertyNamingPolicy = null;
                     });
-
-
-
 
         }
 
